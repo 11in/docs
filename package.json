@@ -1,9 +1,8 @@
 {
-  "name": "elfin",
-  "version": "1.7.1-alpha",
-  "description": "11ty starter package.",
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Docs for Elfin and other 11in packages.",
   "homepage": "https://elfin.netlify.app",
-  "main": "index.js",
   "scripts": {
     "serve": "run-p assets:watch content:serve",
     "build": "run-s all:clean all:build",
