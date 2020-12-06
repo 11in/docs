@@ -48,12 +48,9 @@ for adding a filter.
     `11ty/filters/index.js`, and add the following:
 
     ```js
-    // ...
-    const uppercase = require('./uppercase');
-
     module.exports = conf => {
         // ...
-        uppercase(conf);
+        require('./uppercase')(conf);
     };
     ```
 
