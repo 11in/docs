@@ -1,0 +1,24 @@
+<footer class="mt-16 mb-10 max-w-md mx-auto text-center">
+    <div class="prose prose-sm mb-2">
+        <p class="italic prose prose-sm">Elfin built by <a href="https://www.alwaysblank.org">alwayblank</a></p>
+    </div>
+    <p class="text-xl"><a href="https://www.youtube.com/watch?v=uE-1RPDqJAY">🧝</a></p>
+</footer>
+
+{% include "partials/nomodule-polyfill.njk" %}
+
+<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+<script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//stats.alwaysblank.org/tracker.js', 'fathom');
+fathom('set', 'siteId', 'NDNER');
+fathom('trackPageview');
+</script>
+<!-- / Fathom -->

@@ -1,0 +1,35 @@
+{% macro list_item(entry, current_url, class="mr-2") %}
+  <li class="{{ entry | nav_active(current_url, { active: 'font-bold' }) }} {{ class }}">
+    <a class="underline" href="{{ entry.url | url }}">{{ entry.title }}</a>
+  </li>
+{% endmacro %}
+
+<nav>
+{% set navPages = collections.all | eleventyNavigation %}
+<ul class="flex flex-col md:flex-row">
+{%- for entry in navPages %}
+{{ list_item(entry, page.url, "mr-2") }}
+{%- endfor %}
+</ul>
+{# Get the other children of this parent, or the children of this page #}
+{% set childPages = [] %}
+
+{% if eleventyNavigation.parent %}
+    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.parent) %}
+{% endif %}
+
+{% if childPages.length < 1 %}
+    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+{% endif %}
+
+
+{# If we managed to get some children print them out #}
+{% if childPages.length > 0 %}
+<hr class="md:hidden my-3">
+<ul class="flex flex-col md:flex-row">
+{% for entry in childPages %}
+{{ list_item(entry, page.url, "mb-1 md:mb-0 md:mr-4 text-sm") }}
+{% endfor %}
+</ul>
+{% endif %}
+</nav>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% include "head.njk" %}
+<body class="p-10">
+<header class="max-w-3xl mx-auto mb-6">
+<div class="text-3xl mb-2">
+    <a title="{{ site.name }}" href="/">🧝in</a>
+</div>
+{% include "partials/nav.njk" %}
+</header>
+{{ content | safe }}
+</body>
+{% include "foot.njk" %}
+</html>
