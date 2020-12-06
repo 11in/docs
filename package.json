@@ -66,7 +66,7 @@
   },
   "dependencies": {
     "@11in/cloudinary": "^1.2.2",
-    "@11in/elf-generator-blog": "^1.0.0",
+    "@11in/elf-generator-blog": "^1.1.0",
     "markdown-it": "^12.0.2",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-container": "^3.0.0",
