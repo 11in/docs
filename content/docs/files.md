@@ -9,10 +9,13 @@ eleventyNavigation:
 To help you understand what everything in Elfin is doing, here's an explaination of the file structure!
 
 ```bash
-elfin/                     # -> Your project directory
+elfin/                    # -> Your project directory
 ├── 11ty                  # -> Extensions to 11ty
-│  ├── index.js           # -> Collects filters, shortcodes, etc
+│  ├── loader.js          # -> Collects filters, shortcodes, etc
+│  ├── plugins/           # -> Load any necessary plugins
 │  ├── filters/           # -> Add custom filters here
+│  ├── shared/            # -> Collect shared functionality, i.e. markdown
+│  ├── collections/       # -> Build your collections of content
 │  └── shortcodes/        # -> Add custom shortcodes here
 ├── assets                # -> Assets that will be process by webpack
 │  ├── entry.js           # -> Defines JS, CSS, for build process
@@ -27,8 +30,7 @@ elfin/                     # -> Your project directory
 │  ├── assets/            # -> Used by build process ⚠️ don't touch!
 │  └── index.njk          # -> Example template
 ├── dist/                 # -> Where the site is built to ⚠️ don't touch!
-├── docs/                 # -> Additional documentation
-├── README.adoc           # -> This document!
+├── README.md             # -> Some basic documentation
 ├── package.json          # -> JavaScript Dependencies
 ├── eleventy.config.js    # -> 11ty configuration
 ├── elf.config.js         # -> elf cli configuration
