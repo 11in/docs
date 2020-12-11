@@ -13,7 +13,7 @@ To add (or remove) plugins, modify the `11ty/plugins/loader.js` file.
 ## Cloudinary
 
 This is the [`@11in/cloudinary`](/ecosystem/#cloudinary) plugin. 
-See it's documentation for further details.
+See [its documentation](/docs/cloudinary/) for further details.
 
 ## Eleventy Navigation
 
