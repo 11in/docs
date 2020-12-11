@@ -21,24 +21,8 @@
 {% endmacro %}
 
 <nav>
-<!--{% set navPages = collections.all | eleventyNavigation %}-->
-<!--{{ child_list(navPages, "mr-2 text-lg") }}-->
-
-<!--{# Get the other children of this parent, or the children of this page #}-->
-<!--{% set childPages = [] %}-->
-
-<!--{% if eleventyNavigation.parent %}-->
-<!--    {% set thisLevel = collections.all | eleventyNavigation(eleventyNavigation.parent) %}-->
-<!--{% endif %}-->
-<!--{{ child_list(thisLevel, "mb-1 md:mb-0 md:mr-4 text-md") }}-->
-
-<!--{% if childPages.length < 1 %}-->
-<!--    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.key) %}-->
-<!--{% endif %}-->
-
-<!--{{ child_list(childPages, "mb-1 md:mb-0 md:mr-4 text-sm") }}-->
-</nav>
 {% set fullNav = collections.all | eleventyNavigation | nav_builder(page.url) %}
 {% for level in fullNav %}
     {{ child_list(level) }}
 {% endfor %}
+</nav>
