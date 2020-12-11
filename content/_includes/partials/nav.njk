@@ -1,35 +1,44 @@
 {% macro list_item(entry, current_url, class="mr-2") %}
-  <li class="{{ entry | nav_active(current_url, { active: 'font-bold' }) }} {{ class }}">
-    <a class="underline" href="{{ entry.url | url }}">{{ entry.title }}</a>
+  {% if entry.level == 0 %}
+    {% set class = 'text-xl ' + class %}
+  {% elseif entry.level == 1 %}
+    {% set class = 'text-lg ' + class %}
+  {% endif %}
+  <li class="{% if entry.parent or entry.current %} font-bold {% endif %} {{ class }}">
+    <a class="underline" href="{{ entry.url | url }}">{{ entry.name }}</a>
   </li>
 {% endmacro %}
 
+{% macro child_list(children) %}
+    {% if children.length > 0 %}
+    <hr class="md:hidden my-3">
+    <ul class="flex flex-col md:flex-row">
+        {% for entry in children %}
+        {{ list_item(entry, page.url) }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endmacro %}
+
 <nav>
-{% set navPages = collections.all | eleventyNavigation %}
-<ul class="flex flex-col md:flex-row">
-{%- for entry in navPages %}
-{{ list_item(entry, page.url, "mr-2") }}
-{%- endfor %}
-</ul>
-{# Get the other children of this parent, or the children of this page #}
-{% set childPages = [] %}
+<!--{% set navPages = collections.all | eleventyNavigation %}-->
+<!--{{ child_list(navPages, "mr-2 text-lg") }}-->
 
-{% if eleventyNavigation.parent %}
-    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.parent) %}
-{% endif %}
+<!--{# Get the other children of this parent, or the children of this page #}-->
+<!--{% set childPages = [] %}-->
 
-{% if childPages.length < 1 %}
-    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.key) %}
-{% endif %}
+<!--{% if eleventyNavigation.parent %}-->
+<!--    {% set thisLevel = collections.all | eleventyNavigation(eleventyNavigation.parent) %}-->
+<!--{% endif %}-->
+<!--{{ child_list(thisLevel, "mb-1 md:mb-0 md:mr-4 text-md") }}-->
 
+<!--{% if childPages.length < 1 %}-->
+<!--    {% set childPages = collections.all | eleventyNavigation(eleventyNavigation.key) %}-->
+<!--{% endif %}-->
 
-{# If we managed to get some children print them out #}
-{% if childPages.length > 0 %}
-<hr class="md:hidden my-3">
-<ul class="flex flex-col md:flex-row">
-{% for entry in childPages %}
-{{ list_item(entry, page.url, "mb-1 md:mb-0 md:mr-4 text-sm") }}
-{% endfor %}
-</ul>
-{% endif %}
+<!--{{ child_list(childPages, "mb-1 md:mb-0 md:mr-4 text-sm") }}-->
 </nav>
+{% set fullNav = collections.all | eleventyNavigation | nav_builder(page.url) %}
+{% for level in fullNav %}
+    {{ child_list(level) }}
+{% endfor %}

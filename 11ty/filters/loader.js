@@ -1,3 +1,3 @@
 module.exports = conf => {
-    require('./navActive')(conf);
+    require('./navBuilder')(conf)
 }
