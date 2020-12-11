@@ -2,7 +2,7 @@
 title: Shortcodes
 eleventyNavigation:
     key: Shortcodes
-    parent: Documentation
+    parent: Elfin
     order: 2
 ---
 

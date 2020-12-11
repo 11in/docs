@@ -2,7 +2,7 @@
 title: Redirects
 eleventyNavigation:
   key: Redirects
-  parent: Documentation
+  parent: Elfin
   order: 4
 ---
 

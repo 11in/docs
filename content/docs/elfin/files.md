@@ -2,7 +2,7 @@
 title: Files
 eleventyNavigation:
     key: File Structure
-    parent: Documentation
+    parent: Elfin
     order: 5
 ---
 

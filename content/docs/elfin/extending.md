@@ -2,7 +2,7 @@
 title: Extending
 eleventyNavigation:
     key: Extending
-    parent: Documentation
+    parent: Elfin
     order: 1
 ---
 

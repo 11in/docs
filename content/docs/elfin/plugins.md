@@ -1,7 +1,7 @@
 ---
 title: Plugins
 eleventyNavigation:
-    parent: Documentation
+    parent: Elfin
     key: Plugins
     order: 6
 ---
