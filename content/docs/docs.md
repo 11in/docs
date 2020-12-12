@@ -5,7 +5,7 @@ eleventyNavigation:
     key: Documentation
     order: 2
 ---
-Collectioned documentation for **@11in** tools and packages.
+Collected documentation for **@11in** tools and packages.
 
 [Elfin](/docs/elfin/) is a starter kit for [11ty](https://11ty.dev).
 
