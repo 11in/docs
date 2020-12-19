@@ -8,7 +8,7 @@
  */
 function setup() {
   Array.from(document.querySelectorAll(`a[href^="http"]`)).filter(el => {
-    const url = new Window.URL(el.href, window.location);
+    const url = new window.URL(el.href, window.location);
     return url.host !== document.location.host;
   }).map(el => {
     const target = el.target;
