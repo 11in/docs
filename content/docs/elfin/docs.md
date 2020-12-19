@@ -16,7 +16,7 @@ eleventyNavigation:
 - Tailwind! 2.0!
 - Minimizes and optimizes CSS and JS
 - Lossless compression of images (jpg, png, svg) used in CSS or JS
-- Used webpack's cache to speed up builds (if you're on Netlify, it automatically caches the cache there!)
+- Uses webpack's cache to speed up builds (if you're on Netlify, it automatically caches the cache there!)
 - A handy [CLI](/docs/elf/), if you want it
 
 ## How Do I Use It
