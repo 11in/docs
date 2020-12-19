@@ -1,90 +1,47 @@
+/**
+ * This needs to run early, and allows us to get things from a .env file
+ */
+require('dotenv').config()
+
 const includes = require('./11ty/loader');
-const rimraf = require('rimraf');
-const {
-    join
-} = require('path');
-const cloudinary = require('@11in/cloudinary');
 
 module.exports = function (conf) {
 
     /**
-     * Bring in all our local exentions.
+     * Set up the following:
+     *  - Plugins
+     *  - Filters
+     *  - Shortcodes
+     *  - Collections
      */
     includes(conf);
 
-    /**
-     * Add plugins.
-     */
-    conf.namespace('cl_', () => {
-        conf.addPlugin(cloudinary, {
-            name: "djd6kxozp",
-            transforms: [{
-                quality: "auto",
-            }],
-            defaults: {
-                width: 1024
-            }
-        })
-    });
-    conf.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
-    conf.addPlugin(require('@11ty/eleventy-navigation'))
 
     /**
-     * Copy assets into root, so that manifest records don't need modification.
+     * Copy assets into root
      */
     conf.addPassthroughCopy({
-        "content/assets": "/"
+        "content/files": "/files/",
+        "content/_build": "/",
     });
 
     /**
      * Customize the markdown renderer.
+     * This is for 11ty's rendering of md files--it won't apply to other uses
+     * of markdown rendering in the project unless this same library is used
+     * in those instances.
      */
-    const contain = require('markdown-it-container')
-    const changeClass = t => {
-        return {
-            render: (tokens, idx) => {
-                const type = tokens[idx].type;
-                if (`container_${t}_open` === type) {
-                    return `<div class="admonition-${t}">`
-                }
-                else return `</div>`
-            }
-        }
-    }
-    const md = require('markdown-it')({
-            html: true, // For parity w/ 11ty default setting
-            typographer: true, // Slightly nicer typography
-        })
-        .use(require('markdown-it-emoji'))
-        .use(require('markdown-it-anchor'))
-        .use(require('markdown-it-table-of-contents'), {
-            includeLevel: [2, 3, 4]
-        })
-        .use(contain, 'note', changeClass('note'))
-        .use(contain, 'tip', changeClass('tip'))
-        .use(contain, 'warning', changeClass('warning'))
-        .use(contain, 'important', changeClass('important'))
-
-    conf.setLibrary("md", md)
+    conf.setLibrary("md", require('./11ty/shared/markdown'))
 
     /**
      * This is necessary so that we rebuild when assets are rebuilt.
      */
     conf.setUseGitIgnore(false);
 
-    conf.setQuietMode(true);
-
     /**
-     * Run some cleanup after a build is made.
+     * Less noise since we're running this through another CLI
      */
-    conf.on('afterBuild', () => {
-        // Remove unneeded images.mjs files
-        rimraf(join(process.cwd(), 'dist', 'images.*.mjs?(.map)'), {}, err => {
-            if (err) {
-                console.error(err)
-            }
-        });
-    });
+    conf.setQuietMode(true);
 
     return {
         dir: {
