@@ -5,4 +5,4 @@
 [[plugins]]
 package = "netlify-plugin-cache"
     [plugins.inputs]
-    paths = ["content/assets", "content/_data/assets.json", "webpack.hash"]
+    paths = [".webpack"]
