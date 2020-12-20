@@ -12,7 +12,7 @@ Elfin is (hopefully) the center of expanding ecosystem of packages and tooling t
 
 ## Elf
 
-[📘 Docs](/docs/elf/)
+[:blue_book: Docs](/docs/elf/)
 
 [Elf](https://github.com/11in/elf) is a CLI tool that can help you with a number of tasks related to using Elfin, from scaffolding out filters and shortcodes to generating content boilerplate for things like blog posts.
 Okay, so right now those are the limit of what it does, but that's still pretty cool.
@@ -23,7 +23,13 @@ Okay, so right now those are the limit of what it does, but that's still pretty 
 
 ## Cloudinary
 
-[📘 Docs](/docs/cloudinary/)
+[:blue_book: Docs](/docs/cloudinary/)
 
 [Cloudinary](https://github.com/11in/cloudinary) is an 11ty plugin that gives you some filters and shortcodes for working with images on Cloudinary.
 You don't have to be building a site with Elfin to use it.
+
+## Scribe
+
+[:blue_book: Docs](/docs/scribe/)
+
+[Scribe](https://github.com/11in/scribe) is an Eleventy plugin that bundles together some other plugins and additional functionality to make writing on Eleventy sites a little more pleasant.
