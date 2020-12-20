@@ -3,7 +3,7 @@ title: Shortcodes
 eleventyNavigation:
     key: Shortcodes
     parent: Elfin
-    order: 2
+    order: 3
 ---
 
 11ty makes use of [shortcodes](https://www.11ty.dev/docs/shortcodes/),

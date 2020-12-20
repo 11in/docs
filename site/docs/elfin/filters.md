@@ -3,7 +3,7 @@ title: Filters
 eleventyNavigation:
     key: Filters
     parent: Elfin
-    order: 3
+    order: 2
 ---
 
 11ty makes use of [filters](https://www.11ty.dev/docs/filters/) which are a way to modify content on the fly in your templates.
