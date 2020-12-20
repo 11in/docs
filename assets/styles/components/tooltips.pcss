@@ -1,0 +1,11 @@
+[data-tip], [data-tip-html] {
+    border-bottom: dashed grey 1px;
+    cursor: default;
+}
+
+/* The double class is a dirty trick to override source specificity */
+.tip-html .tippy-content {
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
