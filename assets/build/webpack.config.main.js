@@ -1,5 +1,5 @@
 const base = require('./webpack.config.base')
-const path = require('path')
+const path = require('path');
 
 module.exports = {
     ...base,
@@ -12,15 +12,6 @@ module.exports = {
         ],
     },
 
-    devServer: {
-        contentBase: path.join(__dirname, '..', '..', 'dist'),
-        compress: true,
-        port: 9000,
-        watchContentBase: true,
-        hot: true,
-        publicPath: '/',
-        stats: 'errors-only'
-    },
     module: {
         rules: [
             ...base.module.rules,

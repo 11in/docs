@@ -3,8 +3,6 @@
  */
 require('dotenv').config()
 
-const includes = require('./11ty/loader');
-
 module.exports = function (conf) {
 
     /**
@@ -14,22 +12,18 @@ module.exports = function (conf) {
      *  - Shortcodes
      *  - Collections
      */
-    includes(conf);
-
+    require('./11ty/loader')(conf);
 
     /**
      * Copy assets into root
      */
     conf.addPassthroughCopy({
-        "content/files": "/files/",
-        "content/_build": "/",
+        "site/files": "/files/",
+        "site/_build": "/",
     });
 
     /**
      * Customize the markdown renderer.
-     * This is for 11ty's rendering of md files--it won't apply to other uses
-     * of markdown rendering in the project unless this same library is used
-     * in those instances.
      */
     conf.setLibrary("md", require('./11ty/shared/markdown'))
 
@@ -45,7 +39,7 @@ module.exports = function (conf) {
 
     return {
         dir: {
-            input: "content",
+            input: "site",
             output: "dist",
             includes: "_includes",
             layouts: "_layouts",
