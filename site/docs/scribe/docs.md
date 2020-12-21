@@ -1,5 +1,6 @@
 ---
 title: Scribe
+foretitle: Documentation for
 permalink: /docs/scribe/
 eleventyNavigation:
     parent: Documentation

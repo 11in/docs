@@ -1,5 +1,6 @@
 ---
 title: Cloudinary
+foretitle: Documentation for 
 permalink: /docs/cloudinary/
 eleventyNavigation:
     key: Cloudinary

@@ -1,5 +1,5 @@
 ---
-title: Elfin
+title: Make 11ty (More) Magical
 eleventyNavigation:
     key: Home
     order: 1

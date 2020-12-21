@@ -1,5 +1,6 @@
 ---
 title: Elf
+foretitle: Documentation for
 description: A CLI for Elfin
 permalink: /docs/elf/
 eleventyNavigation:
