@@ -1,0 +1,9 @@
+{% if meta_title -%}
+    {{ meta_title }}
+{%- elif foretitle -%}
+    {{ foretitle }} {{ title }}
+{%- elif eleventyNavigation.parent -%}
+    {{ eleventyNavigation.parent }} {{ title }}
+{%- else -%}
+    {{ title }}
+{%- endif %}
