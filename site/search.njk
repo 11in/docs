@@ -1,0 +1,27 @@
+---
+layout: page.njk
+title: Search
+permalink: /search/
+no_sitemap: true
+---
+
+<div x-data="{ term: '', results: [] }"
+     x-init="window.setupSearch($el); $watch('term', value => results = $el.search(value))">
+    <input type="search" x-model.debounce="term" class="border-2 rounded-lg py-2 px-3 w-full" placeholder="What are you looking for?">
+    <div class="prose-sm my-6" x-show="results.length > 0"
+         x-text="results.length == 1 ? '1 Result' : results.length + ' Results'"></div>
+    <div>
+        <div x-show="results.length < 1" class="mt-4 text-lg ml-2">
+            Start typing above to search!
+        </div>
+        <ol x-show="results.length > 0" class="prose">
+            <template x-for="result in results" :key="result.refIndex">
+                <li>
+                    <a class="text-xl" :href="result.item.url" x-text="result.item.title"></a>
+                    <div x-html="result.item.content"></div>
+                </li>
+            </template>
+        </ol>
+    </div>
+</div>
+
