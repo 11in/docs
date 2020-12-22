@@ -23,9 +23,7 @@ Render a markdown-formatted string into HTML.
 ```
 {% endraw %}
 
-:::note
-This uses the same markdown configuration as 11ty does via `11ty/shared/markdown.js`
-:::
+{% source 'Scribe', 'filter', '/docs/scribe/markdown/' %}
 
 ### md_inline
 
@@ -40,3 +38,18 @@ _Usually_ you don't want this, but it can be useful in situations where you want
     <!-- This is a <strong>markdown</strong> string -->
 ```
 {% endraw %}
+
+{% source 'Scribe', 'filter', '/docs/scribe/markdown/' %}
+
+### cl_url
+
+Generates a url to an asset on Cloudinary.
+You can pass arguments to it that are equal to transforms as described in Cloudinary's Node SDK.
+
+{% raw %}
+```html
+{{ 'image.jpg' | img([{ width: 470 }]) }}
+```
+{% endraw %}
+
+{% source 'Cloudinary', 'filter', '/docs/cloudinary/filters/#url' %}

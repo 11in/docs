@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.9.1-alpha",
+  "version": "1.9.2-alpha",
   "description": "Docs for Elfin and other 11in packages.",
   "homepage": "https://elfin.netlify.app",
   "scripts": {

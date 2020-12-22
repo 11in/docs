@@ -17,7 +17,7 @@ The filters are defined as universal, and should work in Liquid and 11ty.js temp
 ## url
 
 The `url` filter behaves essentially the same as the shortcode, except
-that it takes it’s parameters a bit differently:
+that it takes its parameters a bit differently:
 
 {% raw %}
 ```html
