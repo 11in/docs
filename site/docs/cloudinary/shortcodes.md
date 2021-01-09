@@ -11,7 +11,7 @@ For these shortcodes, pass arguments as a JS object:
 
 {% raw %}
 ```html
-{% cl_image { path: 'folder/image.jpg', transforms: 'w_400' } %}
+{% cl_img { path: 'folder/image.jpg', transforms: 'w_400' } %}
 ```
 {% endraw %}
 
@@ -33,7 +33,7 @@ This will return a url, appropriately constructed.
 
 -   `transforms` - Any transforms you’d like to apply to this item.
 
-## image
+## img
 
 This will return an entire image element.
 
@@ -59,3 +59,13 @@ This will return an entire image element.
 
 -   `attrs` - Any other HTML attributes you want on this element, pass as an array of arrays.
     For boolean attributes, just use an array with a single value.
+    
+::: warning
+The `img` shortcode does only very elementary checks on your content to make sure it's "good." 
+It does _not_ attempt to make it "safe," address XSS attack vectors, or even make sure you're generating valid HTML.
+:::
+
+:::important
+The `img` shortcode is _not_ a wrapper for the Cloudinary SDK's `image` method.
+It uses the SDK's `url` method to generate URLs, but gives additional options for specifying responsive attributes.
+:::
