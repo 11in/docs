@@ -17,16 +17,16 @@ Scaffold is used to generate extensions to Elfin, like filters, collections, etc
 
 - `--stub`, `-s`
 
-  All the scaffolds that ship with Elf include their own stub files. If these aren't doing what you want, this option
-  allow syou to specify your own custom stub file.
+  All the scaffolds that ship with Elf include their own stub files. 
+  If these aren't doing what you want, this option allow you to specify your own custom stub file.
 
-  Stubs use [mustache.js](https://github.com/janl/mustache.js/) for templating. All options and arguments passed to the
-  command are also passed to the template when it is rendered, allowing for significant customization. That means you
-  can do something like this:
+  Stubs use [mustache.js](https://github.com/janl/mustache.js/) for templating. 
+  All options and arguments passed to the command are also passed to the template when it is rendered, allowing for significant customization. 
+  That means you can do something like this:
 
   ```js
   // custom.stub
-  console.log('{{ custom_arg }}') 
+  {% raw %}console.log('{{ custom_arg }}'){% endraw %}
   ```
 
   ```shell
