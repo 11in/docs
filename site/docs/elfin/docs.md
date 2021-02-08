@@ -12,7 +12,7 @@ eleventyNavigation:
 
 ## What Do I Get
 
-- Fast dev with Webpack dev server and hot module reloading
+- Fast dev with live-reloading as you code
 - Delivers modern JS to modern browsers, and shitty JS to shitty browsers
 - Tailwind! 2.0!
 - Minimizes and optimizes CSS and JS
