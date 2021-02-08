@@ -17,9 +17,10 @@ Then it also serves only the necessary bundle to whatever browser your user happ
 
 There's a lot more it does as well, so check out the [:scroll: documentation](/docs/).
 
-Ready to get started? 
-Head over [GitHub](https://github.com/11in/) or pop of the command line and drop this:
+### Ready to get started? 
 
-```sh
+Head over to [GitHub](https://github.com/11in/) or pop on down to the command line and drop this:
+
+```bash
 $ git clone https://github.com/11in/elfin.git neat-new-site
 ```
