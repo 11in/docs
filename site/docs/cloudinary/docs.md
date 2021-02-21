@@ -56,7 +56,7 @@ The (generally) first argument passed to a [shortcode](/docs/cloudinary/shortcod
 _Frequently_ this looks like a filename, i.e. `image.jpg` but depending on how your images were uploaded to Cloudinary it may look different.
 
 :::note
-This plugin does not actually use the API to retrieve an asset record and generate a URL that way--if it did, you'd swap Cloudinary with API requests on every build.
+This plugin does not actually use the API to retrieve an asset record and generate a URL--if it did, you'd swamp Cloudinary with API requests on every build.
 It's mostly just concatenating strings in the appropriate format to use the [Transformation URL API](https://cloudinary.com/documentation/transformation_reference).
 In many cases, `image.jpg` is not actually the public ID of your asset:
 The public ID is `image` and the `.jpg` extension just tells the URL API to serve that asset as a JPEG.
