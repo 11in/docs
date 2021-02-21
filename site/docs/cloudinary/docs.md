@@ -44,3 +44,23 @@ The plugin accepts several configuration options.
 
     - `width` - **optional** The fallback width used for an image if the plugin isn’t given one.
       Defaults internally to `768` if no value is given.
+
+## Public IDs
+
+When you upload a file to Cloudinary, it is given
+(either explicitly or automatically)
+a public ID, which is how it can be identified by the API.
+A full discussion of public IDs is obviously beyond the scope of this document, so you are encouraged to read Cloudinary's documentation on [public IDs](https://cloudinary.com/documentation/upload_images#public_id).
+
+The (generally) first argument passed to a [shortcode](/docs/cloudinary/shortcodes) or [filter](/docs/cloudinary/filters) in this plugin is the public ID.
+_Frequently_ this looks like a filename, i.e. `image.jpg` but depending on how your images were uploaded to Cloudinary it may look different.
+
+:::note
+This plugin does not actually use the API to retrieve an asset record and generate a URL that way--if it did, you'd swap Cloudinary with API requests on every build.
+It's mostly just concatenating strings in the appropriate format to use the [Transformation URL API](https://cloudinary.com/documentation/transformation_reference).
+In many cases, `image.jpg` is not actually the public ID of your asset:
+The public ID is `image` and the `.jpg` extension just tells the URL API to serve that asset as a JPEG.
+:::
+
+In most cases, you can use a URL for your asset and it will "just work," but if things go sideways it can be helpful to know what's going on behind the scenes.
+If you feel lik you've encountered a bug in this plugin, please [file a bug report](https://github.com/11in/cloudinary/issues/new).

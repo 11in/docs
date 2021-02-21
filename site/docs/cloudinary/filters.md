@@ -16,7 +16,7 @@ The filters are defined as universal, and should work in Liquid and 11ty.js temp
 
 ## url
 
-The `url` filter behaves essentially the same as the shortcode, except
+The `url` filter behaves essentially the same as the [shortcode](/docs/cloudinary/shortcodes), except
 that it takes its parameters a bit differently:
 
 {% raw %}

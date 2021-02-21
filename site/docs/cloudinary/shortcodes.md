@@ -29,7 +29,8 @@ This will return a url, appropriately constructed.
 
 **Arguments**
 
--   `path` - This is the path on cloudinary to the item you want, i.e. `folder/image.jpg`
+-   `public id` -  This is the public ID of the asset on Cloudinary that you want.
+    Often that looks like a directory and image, i.e. `folder/image.jpg`.
 
 -   `transforms` - Any transforms you’d like to apply to this item.
 
@@ -39,7 +40,8 @@ This will return an entire image element.
 
 **Arguments**
 
--   `path` - This is the path on cloudinary to the item you want, i.e. `folder/image.jpg`
+-   `public id` -  This is the public ID of the asset on Cloudinary that you want.
+    Often that looks like a directory and image, i.e. `folder/image.jpg`.
 
 -   `transforms` - Any transforms you’d like to apply to this item. These transforms will be applied to all urls in this image (the `src` and `srcset`).
 
