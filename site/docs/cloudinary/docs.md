@@ -23,6 +23,12 @@ conf.namespace('cl_', () => {
 })
 ```
 
+Now you have access to the [shortcodes](/docs/cloudinary/shortcodes) and [filters](/docs/cloudinary/filters) that this plugin provides!
+
+:::warning
+This plugin will try hard to extract public IDs and other information from Cloudinary URLs or segments of those URLs, but it _will_ choke if you give it a Cloudinary URL that already has transforms in it.
+:::
+
 ## Configuration
 
 The plugin accepts several configuration options.
