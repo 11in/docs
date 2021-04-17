@@ -20,6 +20,12 @@ eleventyNavigation:
 - Uses webpack's cache to speed up builds (if you're on Netlify, it automatically caches the cache there!)
 - A handy [CLI](/docs/elf/), if you want it
 
+::: tip
+As speed is one of the goals of Elfin, the [Tailwind JIT compiler](https://tailwindcss.com/docs/just-in-time-mode) is of great interest to us.
+Unfortunately, it's not stable or tracked by semver yet, so it's not available in the `main` branch of Elfin.
+If you'd like to play around with Elfin's Tailwind JIT implementation, check out the [`tailwind-jit` branch](https://github.com/11in/elfin/tree/tailwind-jit).
+:::
+
 ## How Do I Use It
 
 - `npm run build` - Builds the entire site into the `dist` directory
